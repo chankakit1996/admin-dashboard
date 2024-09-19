@@ -4,11 +4,23 @@
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
+    "@swc/core": "^1.7.26",
+    "@swc/helpers": "^0.5.13",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
     "@types/node": "^22.5.5",
+    "regenerator-runtime": "^0.14.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.6.2"
   },
-  "dependencies": {},
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "helmet": "^7.1.0",
+    "mongoose": "7.8.1"
+  },
   "scripts": {
     "dev": "ts-node index.ts"
   },
