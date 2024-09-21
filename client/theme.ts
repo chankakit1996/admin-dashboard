@@ -1,5 +1,5 @@
 // color design tokens export
-const tokensDark: Record<string, Record<string, string>> = {
+export const tokensDark = {
   grey: {
     0: "#ffffff", // manually adjusted
     10: "#f6f6f6", // manually adjusted
@@ -60,7 +60,7 @@ function reverseTokens(tokensDark: Record<string, Record<string, string>>) {
 export const tokensLight = reverseTokens(tokensDark);
 
 // mui theme settings
-const themeSettings = (mode: "light" | "dark") => {
+export const themeSettings = (mode: "dark" | "light") => {
   return {
     palette: {
       mode: mode,
@@ -137,5 +137,3 @@ const themeSettings = (mode: "light" | "dark") => {
     },
   };
 };
-
-export default themeSettings;

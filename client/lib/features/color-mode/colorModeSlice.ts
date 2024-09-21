@@ -2,10 +2,12 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const colorModeSlice = createSlice({
   name: "colorMode",
-  initialState: "light",
+  initialState: {
+    mode: "dark",
+  },
   reducers: {
     setColorMode: (state) => {
-      return state === "light" ? "dark" : "light";
+      state.mode = state.mode === "light" ? "dark" : "light";
     },
   },
 });

@@ -12,3 +12,8 @@ body,
   width: 100%;
   font-family: "Inter", sans-serif;
 }
+
+a {
+  text-decoration: none !important;
+  color: inherit;
+}
