@@ -5,7 +5,7 @@ import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
-import themeSettings from "../../theme";
+import { themeSettings } from "../../theme";
 import { useAppDispatch, useAppSelector } from "../../lib/hook";
 import { setColorMode } from "../../lib/features/color-mode/colorModeSlice";
 

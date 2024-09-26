@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "dev": "ts-node index.ts",
+    "dev:nodemon": "npx -y nodemon index.ts --ignore 'node_modules/*' --ignore 'public/*' --ignore 'client/*'"
+  },
   "devDependencies": {
     "@swc/core": "^1.7.26",
     "@swc/helpers": "^0.5.13",
@@ -20,9 +24,6 @@
     "express": "^4.21.0",
     "helmet": "^7.1.0",
     "mongoose": "7.8.1"
-  },
-  "scripts": {
-    "dev": "ts-node index.ts"
   },
   "keywords": [],
   "author": "",

@@ -19,12 +19,13 @@ const PORT = process.env.PORT;
 
 mongoose
   .connect(process.env.DB_URI as string)
-  .then(() => {
+  .then(async () => {
     console.log("Connected to MongoDB");
     app.listen(PORT, () => {
       console.log(`Server is running on port ${PORT}`);
     });
   })
   .catch((error) => {
+    console.log("Cannot connect to MongoDB");
     console.log(error);
   });
