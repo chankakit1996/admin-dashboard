@@ -40,10 +40,22 @@ export interface Transaction {
   status: string;
 }
 
+export interface OverallStat {
+  _id: string;
+  totalSales: number;
+  totalUnits: number;
+  year: number;
+  monthlyData: {
+    month: string;
+    totalSales: number;
+    totalUnits: number;
+  }[];
+}
+
 export const apiSlice = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:8080" }),
   reducerPath: "userApi",
-  tagTypes: ["User", "Products", "Customers", "Transactions"],
+  tagTypes: ["User", "Products", "Customers", "Transactions", "Sales"],
   endpoints: (builder) => ({
     getUser: builder.query<User, string | number>({
       query: (id) => `/user/${id}`,
@@ -92,6 +104,10 @@ export const apiSlice = createApi({
       }),
       providesTags: ["Transactions"],
     }),
+    getSales: builder.query<OverallStat, void>({
+      query: () => "/sales",
+      providesTags: ["Sales"],
+    }),
   }),
 });
 
@@ -100,4 +116,5 @@ export const {
   useGetProductsQuery,
   useGetCustomersQuery,
   useGetTransactionsQuery,
+  useGetSalesQuery,
 } = apiSlice;

@@ -15,6 +15,7 @@ import SideBar from "./SideBar";
 import { useAppSelector } from "../../lib/hook";
 import { themeSettings } from "../../theme";
 import { useGetUserQuery } from "../../lib/features/api/apiSlice";
+import "chart.js/auto";
 
 export const HomePageLayout = ({ children }: { children: React.ReactNode }) => {
   const mode = useAppSelector((state) => state.colorMode);
@@ -77,10 +78,10 @@ export const HomePageHeader = ({
 }) => {
   return (
     <Box className="homepage-header" flexGrow={1}>
-      <Typography variant="h1" fontWeight="bold" mb="0.5rem">
+      <Typography variant="h1" fontWeight="bold" mb="0.5rem" color="grey[0]">
         {title}
       </Typography>
-      <Typography variant="body1" mb="0.5rem">
+      <Typography variant="body1" mb="0.5rem" color="grey[0]">
         {description}
       </Typography>
     </Box>

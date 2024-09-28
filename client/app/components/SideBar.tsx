@@ -70,17 +70,17 @@ const navItems = [
   },
   {
     text: "Overview",
-    toPage: "/overview",
+    toPage: "/sales/overview",
     icon: <PointOfSaleOutlined />,
   },
   {
     text: "Daily",
-    toPage: "/daily",
+    toPage: "/sales/daily",
     icon: <TodayOutlined />,
   },
   {
     text: "Monthly",
-    toPage: "/monthly",
+    toPage: "/sales/monthly",
     icon: <CalendarMonthOutlined />,
   },
   {
@@ -121,7 +121,7 @@ export default function SideBar({
   const theme = useTheme();
 
   useEffect(() => {
-    setActive(pathname.substring(1));
+    setActive(`/${pathname.substring(1)}`);
   }, [pathname]);
 
   return (
@@ -172,7 +172,6 @@ export default function SideBar({
                   );
                 }
 
-                const lowerText = text.toLowerCase();
                 return (
                   <ListItem key={text} disablePadding>
                     <Link href={toPage} width="100%">
@@ -182,11 +181,11 @@ export default function SideBar({
                         }}
                         sx={{
                           backgroundColor:
-                            active === lowerText
+                            active === toPage
                               ? theme.palette.secondary[300]
                               : "transparent",
                           color:
-                            active === lowerText
+                            active === toPage
                               ? theme.palette.primary[600]
                               : theme.palette.secondary[100],
                         }}
@@ -195,7 +194,7 @@ export default function SideBar({
                           sx={{
                             ml: "2rem",
                             color:
-                              active === lowerText
+                              active === toPage
                                 ? theme.palette.primary[600]
                                 : theme.palette.secondary[200],
                           }}
@@ -203,7 +202,7 @@ export default function SideBar({
                           {icon}
                         </ListItemIcon>
                         <ListItemText primary={text} />
-                        {active === lowerText && (
+                        {active === toPage && (
                           <ChevronRightOutlined sx={{ ml: "auto" }} />
                         )}
                       </ListItemButton>

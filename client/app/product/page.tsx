@@ -59,27 +59,15 @@ function ProductCard({ product }: { product: Product }) {
               <Rating value={product.rating} />
             </Typography>
 
-            <ExpandMore
-              expand={expanded}
-              onClick={() => setExpanded(!expanded)}
-              aria-expanded={expanded}
-              aria-label="show more"
-              disableRipple
+            <ExpandMoreIcon
+              className="abc"
               sx={{
-                paddingLeft: "0px",
-                paddingRight: "0px",
+                "& > span": {
+                  backgroundColor: "transparent",
+                  boxShadow: "none",
+                },
               }}
-            >
-              <ExpandMoreIcon
-                className="abc"
-                sx={{
-                  "& > span": {
-                    backgroundColor: "transparent",
-                    boxShadow: "none",
-                  },
-                }}
-              />
-            </ExpandMore>
+            />
           </CardContent>
           <Collapse in={expanded} timeout="auto" unmountOnExit>
             <CardContent sx={{ color: "text.secondary", paddingTop: "0px" }}>

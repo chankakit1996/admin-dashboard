@@ -2,7 +2,7 @@ import { Theme, PaletteColor, Palette } from "@mui/material/styles";
 
 interface MyTheme extends Theme {
   palette: {
-    grey: {
+    neutral: {
       0: string;
       10: string;
       50: string;
