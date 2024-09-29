@@ -50,6 +50,11 @@ export interface OverallStat {
     totalSales: number;
     totalUnits: number;
   }[];
+  dailyData: {
+    date: string;
+    totalSales: number;
+    totalUnits: number;
+  }[];
 }
 
 export const apiSlice = createApi({

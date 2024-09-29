@@ -50,9 +50,8 @@ const Overview = () => {
     });
 
     return [[totalSalesLine], [totalUnitsLine]];
-  }, [data]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [data]);
 
-  console.log(theme.palette);
   return (
     <Box m="1.5rem 2.5rem" sx={{ flexGrow: 1 }}>
       <HomePageHeader
