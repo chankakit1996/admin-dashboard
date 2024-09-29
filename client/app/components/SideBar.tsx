@@ -80,11 +80,12 @@ const navItems = [
   },
   {
     text: "Monthly",
-    toPage: "/sales/monthly",
+    toPage: "#",
     icon: <CalendarMonthOutlined />,
   },
   {
     text: "Breakdown",
+    toPage: "/sales/breakdown",
     icon: <PieChartOutlined />,
   },
   {

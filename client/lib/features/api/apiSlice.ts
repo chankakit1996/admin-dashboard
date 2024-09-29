@@ -55,6 +55,8 @@ export interface OverallStat {
     totalSales: number;
     totalUnits: number;
   }[];
+  salesByCategory: Record<string, number>;
+  yearlySalesTotal: number;
 }
 
 export const apiSlice = createApi({
