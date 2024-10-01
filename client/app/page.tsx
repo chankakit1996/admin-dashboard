@@ -27,7 +27,6 @@ const App = () => {
   const theme = useTheme();
   const isNonMediumScreens = useMediaQuery("(min-width: 1200px)");
   const { data, isFetching } = useGetDashboardStatsQuery();
-  console.log({ data });
 
   const columns = [
     {

@@ -88,7 +88,7 @@ export interface DashboardStats {
 }
 
 export const apiSlice = createApi({
-  baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:8080" }),
+  baseQuery: fetchBaseQuery({ baseUrl: process.env.NEXT_PUBLIC_API_URL }),
   reducerPath: "userApi",
   tagTypes: [
     "User",
