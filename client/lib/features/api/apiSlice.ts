@@ -59,10 +59,45 @@ export interface OverallStat {
   yearlySalesTotal: number;
 }
 
+export interface DashboardStats {
+  totalCustomers: number;
+  yearlyTotalSoldUnits: number;
+  yearlySalesTotal: number;
+  monthlyData: {
+    month: string;
+    totalSales: number;
+    totalUnits: number;
+  }[];
+  salesByCategory: {
+    shoes: number;
+    clothing: number;
+    accessories: number;
+    misc: number;
+  };
+  thisMonthStats: {
+    month: string;
+    totalSales: number;
+    totalUnits: number;
+  };
+  todayStats: {
+    date: string;
+    totalSales: number;
+    totalUnits: number;
+  };
+  transactions: Transaction[];
+}
+
 export const apiSlice = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:8080" }),
   reducerPath: "userApi",
-  tagTypes: ["User", "Products", "Customers", "Transactions", "Sales"],
+  tagTypes: [
+    "User",
+    "Products",
+    "Customers",
+    "Transactions",
+    "Sales",
+    "DashboardStats",
+  ],
   endpoints: (builder) => ({
     getUser: builder.query<User, string | number>({
       query: (id) => `/user/${id}`,
@@ -115,6 +150,10 @@ export const apiSlice = createApi({
       query: () => "/sales",
       providesTags: ["Sales"],
     }),
+    getDashboardStats: builder.query<DashboardStats, void>({
+      query: () => "/dashboard-stats",
+      providesTags: ["DashboardStats"],
+    }),
   }),
 });
 
@@ -124,4 +163,5 @@ export const {
   useGetCustomersQuery,
   useGetTransactionsQuery,
   useGetSalesQuery,
+  useGetDashboardStatsQuery,
 } = apiSlice;

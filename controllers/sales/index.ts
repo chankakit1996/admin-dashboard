@@ -3,17 +3,9 @@ import OverallStat from "../../models/overall-stat";
 
 export const getSales = async (req: Request, res: Response) => {
   try {
-    const overallStat = await OverallStat.find();
-    return res.status(200).json(overallStat[0]);
-  } catch (error) {
-    return res.status(500).json({ error: "Overall stat not found" });
-  }
-};
-
-export const getDailySales = async (req: Request, res: Response) => {
-  try {
-    const { from, to } = req.body;
-    const overallStat = await OverallStat.find();
+    const overallStat = await OverallStat.find()
+      .select("-salesByCategory._id")
+      .lean();
     return res.status(200).json(overallStat[0]);
   } catch (error) {
     return res.status(500).json({ error: "Overall stat not found" });

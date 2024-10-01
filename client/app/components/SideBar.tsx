@@ -59,11 +59,11 @@ const navItems = [
     toPage: "/transaction",
     icon: <ReceiptLongOutlined />,
   },
-  {
-    text: "Geography",
-    toPage: "/geography",
-    icon: <PublicOutlined />,
-  },
+  // {
+  //   text: "Geography",
+  //   toPage: "/geography",
+  //   icon: <PublicOutlined />,
+  // },
   {
     text: "Sales",
     icon: null,
@@ -78,11 +78,11 @@ const navItems = [
     toPage: "/sales/daily",
     icon: <TodayOutlined />,
   },
-  {
-    text: "Monthly",
-    toPage: "#",
-    icon: <CalendarMonthOutlined />,
-  },
+  // {
+  //   text: "Monthly",
+  //   toPage: "#",
+  //   icon: <CalendarMonthOutlined />,
+  // },
   {
     text: "Breakdown",
     toPage: "/sales/breakdown",
@@ -92,16 +92,16 @@ const navItems = [
     text: "Management",
     icon: null,
   },
-  {
-    text: "Admin",
-    toPage: "/admin",
-    icon: <AdminPanelSettingsOutlined />,
-  },
-  {
-    text: "Performance",
-    toPage: "/performance",
-    icon: <TrendingUpOutlined />,
-  },
+  // {
+  //   text: "Admin",
+  //   toPage: "/admin",
+  //   icon: <AdminPanelSettingsOutlined />,
+  // },
+  // {
+  //   text: "Performance",
+  //   toPage: "/performance",
+  //   icon: <TrendingUpOutlined />,
+  // },
 ];
 
 export default function SideBar({
