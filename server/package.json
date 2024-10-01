@@ -7,6 +7,7 @@
     "dev": "ts-node index.ts",
     "build": "rm -rf dist && tsc",
     "dev:build": "yarn build && node dist/index.js",
+    "dev:build:ts-node": "yarn build && node dist/index.js",
     "dev:nodemon": "npx -y nodemon index.ts --ignore 'node_modules/*' --ignore 'public/*' --ignore 'client/*'"
   },
   "devDependencies": {
