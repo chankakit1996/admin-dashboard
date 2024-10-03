@@ -34,7 +34,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Detect package manager
+        with:
+          path: './client'
+      - working-directory: ./client
         id: detect-package-manager
         run: |
           if [ -f "${{ github.workspace }}/client/yarn.lock" ]; then
@@ -54,7 +56,6 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          working-directory: ./app
           node-version: "20"
           cache: ${{ steps.detect-package-manager.outputs.manager }}
       - name: Setup Pages
