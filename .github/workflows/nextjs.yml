@@ -28,14 +28,11 @@ jobs:
   # Build job
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./client
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          path: './client'
+          path: 'client'
       - working-directory: ./client
         id: detect-package-manager
         run: |
