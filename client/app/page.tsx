@@ -99,7 +99,9 @@ const App = () => {
         gridAutoRows="160px"
         gap="20px"
         sx={{
-          "& > div": { gridColumn: isNonMediumScreens ? undefined : "span 12" },
+          "& > div": {
+            gridColumn: isNonMediumScreens ? undefined : "span 12",
+          },
         }}
       >
         {/* ROW 1 */}
