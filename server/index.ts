@@ -28,17 +28,10 @@ app.use(
 app.use(express.json()); // Parse JSON bodies in requests
 app.use(express.urlencoded({ extended: true })); // Parse URL-encoded bodies in requests
 
-app.use(routes);
-// if (process.env.NODE_ENV === "production") {
-//   app.use("/", (req, res, next) => {
-//     res.setHeader(
-//       "Content-Security-Policy",
-//       "default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; font-src 'self'; img-src 'self'; frame-src 'self';"
-//     );
-//     next();
-//   });
-// }
-app.use(express.static(path.resolve(__dirname, "../client/out")));
+app.use('/api', routes);
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.resolve(__dirname, "./public")));
+}
 
 const PORT = process.env.PORT;
 

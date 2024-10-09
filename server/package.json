@@ -5,9 +5,9 @@
   "license": "MIT",
   "scripts": {
     "dev": "ts-node index.ts",
-    "build": "rm -rf dist && tsc",
-    "dev:build": "yarn build && node dist/index.js",
-    "dev:build:ts-node": "yarn build && node dist/index.js",
+    "build": "yarn build:backend && yarn build:frontend",
+    "build:backend": "tsc",
+    "build:frontend": "cd ../client && npm run build",
     "dev:nodemon": "npx -y nodemon index.ts --ignore 'node_modules/*' --ignore 'public/*' --ignore 'client/*'"
   },
   "devDependencies": {
