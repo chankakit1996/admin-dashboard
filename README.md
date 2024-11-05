@@ -26,3 +26,11 @@ This repository contains the code for a full-stack MERN (MongoDB, Express, Next.
 
 - `/client`: React frontend application
 - `/server`: Node.js backend API
+
+## Build Script
+1. Runtime: Not set
+2. Base directory: server
+3. Package directory: Not set
+4. Build command: `cd ../client && yarn && yarn build && mv out ../server/public`
+5. Publish directory: server/public
+6. Functions directory: server/netlify/functions
